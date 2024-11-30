@@ -1,101 +1,227 @@
 import Image from "next/image";
+import Timer from "./timer";
+import Link from "next/link";
+import * as React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
+import Timeline from "./timeline";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    return (
+        <div>
+            {/* Main */}
+            <section className="flex justify-center items-center h-[100vh] w-full bg-[#233077] bg-[length:75px_75px] bg-[linear-gradient(90deg,_transparent_74px,_#6C78B9_74px,_#6C78B9_75px),_linear-gradient(transparent_74px,_#6C78B9_74px,_#6C78B9_75px)]">
+                <Image
+                    className="absolute top-[8rem] left-[4rem]"
+                    src="/cewek.svg"
+                    alt=""
+                    width={250}
+                    height={250}
+                ></Image>
+                <Image
+                    className="absolute bottom-[8rem] right-[4rem]"
+                    src="/cowok.svg"
+                    alt=""
+                    width={250}
+                    height={250}
+                ></Image>
+                {/* Tulisan Arkav */}
+                <div className="z-10">
+                    <div className="w-[550px] pl-[1.5rem] py-[1.5rem] bg-black  flex items-center justify-start gap-[0.75rem]">
+                        <div className="w-[20px] h-[20px] bg-red-600 rounded-full"></div>
+                        <div className="w-[20px] h-[20px] bg-yellow-500 rounded-full"></div>
+                        <div className="w-[20px] h-[20px] bg-green-700 rounded-full"></div>
+                    </div>
+                    <div className="w-[550px] h-[230px] border-black border-[6px] gap-[1rem] bg-white items-center flex flex-col  justify-center">
+                        <h1 className="text-black font-bold text-[3.5rem]">
+                            ARKAVIDIA 8.0
+                        </h1>
+                        <div className="bg-black px-[1.5rem] py-[1rem] rounded-xl">
+                            <h2 className="text-white font-bold">
+                                IT & Informatics Festival
+                            </h2>
+                        </div>
+                        <div className="flex flex-col"></div>
+                    </div>
+                </div>
+                {/* Tombol Explore */}
+                <Link href="#timer" className=" bottom-[2rem] absolute ">
+                    <button className=" shadow-[4px_10px_0px_#000] bg-white w-[6rem] h-[6rem] rounded-xl gap-[0.5rem] flex flex-col items-center justify-center">
+                        <div className="flex justify-center">
+                            <Image
+                                className="rotate-90 animate-bounce"
+                                src="/right-arrow.png"
+                                alt=""
+                                width={30}
+                                height={30}
+                            />
+                        </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                        <span className="font-bold text-[#233077]">
+                            Explore
+                        </span>
+                    </button>
+                </Link>
+            </section>
+            {/* Timer */}
+            <section id="timer" className="w-full ">
+                <div className="w-full overflow-hidden">
+                    <p className="whitespace-nowrap overflow-hidden font-bold py-1">
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                        CLOSE REGISTRATION CLOSE REGISTRATION CLOSE REGISTRATION
+                    </p>
+                </div>
+                <Timer />
+            </section>
+            {/* Penjelasan */}
+            <section className=" flex items-center justify-center py-[5rem] ">
+                {/* INFO */}
+                <div className="flex flex-col ">
+                    <div className="flex flex-col   ">
+                        <span className="mb-[3px] -rotate-3 w-fit text-white font-bold bg-black px-[4rem] py-[0.8rem]  ">
+                            ADAPTIVE COLABORATION
+                        </span>
+                        <span className="-rotate-1 w-fit text-white font-bold bg-black px-[4rem] py-[0.8rem]  ">
+                            TO ENCOUNTER
+                        </span>
+                        <span className="ml-14 items-end -rotate-3 w-fit text-white font-bold bg-black px-[4rem] py-[0.8rem]  ">
+                            DIGITAL DISTRUPTION
+                        </span>
+                    </div>
+                    <p className="w-[50%] text-justify ml-14 mt-6">
+                        Arkavidia merupakan acara IT tahunan yang diadakan oleh
+                        Himpunan Mahasiswa Informatika ITB. Dengan tema
+                        “Adaptive Collaboration to Encounter Digital
+                        Disruption”, Arkavidia 8.0 diharapkan akan lebih banyak
+                        individu sadar akan hak dan kewajibannya di dunia
+                        digital, sehingga dapat mewujudkan kemerdekaan digital
+                        bagi dirinya. Diharapkan dengan diadakannya acara ini,
+                        dapat memberikan manfaat bagi pelajar, civitas akademik,
+                        dan masyarakat umum seluruh Indonesia.
+                    </p>
+                </div>
+                {/* CAROUSEL */}
+                <div>
+                    <Carousel className="w-full max-w-xs mr-[16rem]">
+                        <CarouselContent>
+                            {Array.from({ length: 3 }).map((_, index) => (
+                                <CarouselItem key={index}>
+                                    <div className="p-1">
+                                        <Card>
+                                            <CardContent className="flex aspect-square items-center justify-center p-6">
+                                                <Image
+                                                    className="rounded-xl"
+                                                    src={`/carousel${
+                                                        index + 1
+                                                    }.webp`}
+                                                    alt=""
+                                                    width={250}
+                                                    height={250}
+                                                ></Image>
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+                </div>
+            </section>
+            {/* Cards */}
+            <section>
+                <div className="w-[70vw] h-[280px] flex justify-between gap-4">
+                    {/* Hiasan */}
+                    <div className="w-[10%] border-black border-[2px]  bg-[#FFEADF] flex flex-col-reverse">
+                        <Image
+                            src="/Mask group.webp"
+                            alt=""
+                            width={100}
+                            height={100}
+                        ></Image>
+                    </div>
+                    {/* card */}
+                    <div className="grow p-4 border-black border-[2px] flex flex-col items-center bg-red-600">
+                        <h3 className="font-bold text-[4rem] bg-[#FFEADF] border-black border-[2px] py-[2rem] w-[100%] text-center ">
+                            412
+                        </h3>
+                        <div className="flex flex-col items-center text-white h-[100%]  justify-center">
+                            <span>PAST</span>
+                            <span className="font-bold">PARTICIPANTS</span>
+                        </div>
+                    </div>
+                    {/* card */}
+                    <div className="grow p-4 border-black border-[2px] flex flex-col items-center bg-blue-700">
+                        <h3 className="font-bold text-[4rem] bg-[#FFEADF] border-black border-[2px] py-[2rem] w-[100%] text-center ">
+                            329
+                        </h3>
+                        <div className="flex flex-col items-center text-white h-[100%] justify-center">
+                            <span></span>
+                            <span className="font-bold">COMMITTESS</span>
+                        </div>
+                    </div>
+                    {/* card */}
+                    <div className="grow p-4 border-black border-[2px] flex flex-col items-center bg-green-700">
+                        <h3 className="font-bold text-[4rem] bg-[#FFEADF] border-black border-[2px] py-[2rem] w-[100%] text-center ">
+                            69
+                        </h3>
+                        <div className="flex flex-col items-center text-white h-[100%] justify-center">
+                            <span>PAST</span>
+                            <span className="font-bold">PARTNERS</span>
+                        </div>
+                    </div>
+                    <div className="w-[10%] border-black border-[2px]  bg-[#FFEADF] flex flex-col-reverse items-end">
+                        <Image
+                            src="/Mask group (1).webp"
+                            alt=""
+                            width={100}
+                            height={100}
+                        ></Image>
+                    </div>
+                </div>
+            </section>
+            {/* TIMELINE */}
+            <section className="mb-5 mt-5">
+                <Timeline></Timeline>
+            </section>
+
+            {/* FOOTER */}
+            <footer className="border-t-black border-t-[20px]  flex justify-center items-center h-[30vh] w-full bg-[#F43518] bg-[length:75px_75px] bg-[linear-gradient(90deg,_transparent_74px,_#000000_74px,_#000000_75px),_linear-gradient(transparent_74px,_#000000_74px,_#000000_75px)]">
+                <div className="bg-white w-[585px] flex border-2 border-black">
+                    <div className="p-2  flex border-r-2 border-r-black">
+                        <Image
+                            alt="icon arkav"
+                            src="/logo.webp"
+                            width={100}
+                            height={100}
+                        />
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="font-extrabold text-[24px] border-b-2 bg-black text-white grow border-b-black w-[100%] flex items-center justify-center ">
+                            <h3>ARKAVIDIA 8.0</h3>
+                        </div>
+                        <div className=" bg-[#069154] font-bold w-[100%] flex items-center justify-center grow ">
+                            <span className="text-center">
+                                ADAPTIVE COLLABORATION TO ENCOUNTER DIGITAL
+                                DISRUPTION
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
